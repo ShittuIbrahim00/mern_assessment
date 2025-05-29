@@ -1,12 +1,16 @@
-import Floatingshape from "./components/Floatingshape";
+import {  Route, Routes } from "react-router-dom";
+// import Floatingshape from "./components/Floatingshape";
 import { Toaster } from "react-hot-toast";
+import Home from "./pages/Home";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
-	<div className="min-h-screen bg-gradient-to-br from-gray-900 via-green-800 to-emerald-900 justify-center flex items-center relative overflow-hidden">
-    <Floatingshape color="bg-green-500" size="w-64 h-64" top="-5%" left="10%" delay={0} />
-    <Floatingshape color="bg-red-500" size="w-48 h-48" top="-70%" left="50%" delay={5} />
-    <Floatingshape color="bg-blue-500" size="w-32 h-32" top="20%" left="-40%" delay={2} />
+	<div className="bg-[#222222]">
+    <NavBar />
+    <Routes>
+      <Route path="/" element={<Home />}/>
+    </Routes>
     <Toaster />
   </div>
   );
